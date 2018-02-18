@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <title>Clock</title>
+   <style type="text/css">
+   	.container {
+   		margin: 0 auto;
+   		width: 600px;
+   		height: 600px;
+   		border: 1px solid #000;
+   		border-radius: 10%; 
+   		position: relative;
+   		background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+   	}
+   	.sec{
+   		left: 49%;
+   		top: 50px;
+   		transform-origin: 50% 90%;
+   		position: absolute;
+   		width: 1px;
+   		height: 300px;
+   		background: red;
+   	}
+   	.minutes {
+   		left: 49%;
+   		top: 90px;
+   		transform-origin: 50% 90%;
+   		position: absolute;
+   		width: 3px;
+   		height: 250px;
+   		background: brown;
+   	}
+   	.hours {
+   		left: 49%;
+   		top: 120px;
+   		transform-origin: 50% 100%;
+   		position: absolute;
+   		width: 5px;
+   		height: 200px;
+   		background: #000;
+   	}
+   	.dot {
+   		width: 20px;
+   		height: 20px;
+   		border-radius: 50%;
+   		background: #000;
+   		position: absolute;
+   		top: 51%;
+   		left: 48%;
+   	}
+	.num {
+		font-size: 30px;
+		position: absolute;
+	}
+	.twelfth {
+		top: 0;
+		left: 48%;
+	}
+	.three {
+		right: 5%;
+		top: 45%;
+	}
+	.six {
+		bottom: 0;
+		left: 48%;
+	}
+	.nine {
+		left: 5%;
+		top: 45%;
+	}
+   </style>
+</head>
+<body>
+	<div class="container">
+	  <div class="sec"></div>
+	  <div class="minutes"></div>
+	  <div class="hours"></div>
+	  <div class="dot"></div>
+	  <p class="num twelfth">12</p>
+	  <p class="num three">3</p>
+	  <p class="num six">6</p>
+	  <p class="num nine">9</p>
+	</div>
+
+	<script type="text/javascript">
+	window.onload = function(){
+		setInterval(rotation, 1000);
+		var sec = 0;
+		var min = 0;
+		var hour = 0;
+		 // var h = today.getHours();
+   //  var m = today.getMinutes();
+   //  var s = today.getSeconds();
+		 function rotation() {
+			document.querySelector('.sec').style.transform = 'rotate('+sec+'deg)';
+			document.querySelector('.minutes').style.transform = 'rotate('+min+'deg)';
+			document.querySelector('.hours').style.transform = 'rotate('+hour+'deg)';
+			sec += 6;
+			
+			if(sec == 360) {
+				sec = 0;
+				min += 30;
+				hour += ;
+			}
+			if(min == 360) {
+				min = 0;
+			
+			}
+			if(hour == 360) {
+				hour = 0;
+			
+			}
+
+		}
+		
+		}
+	
+	</script>
+</body>
+</html>
